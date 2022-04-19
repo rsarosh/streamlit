@@ -1,0 +1,6 @@
+[MySQL]
+host = "127.0.0.1"
+port = 3306
+database = "streamlit"
+user = "root"
+password =  "XXXXXXX"
