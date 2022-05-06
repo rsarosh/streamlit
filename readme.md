@@ -2,8 +2,9 @@
  docker build -f Dockerfile -t streamlit-app:latest .
  docker run -p 8501:8501 streamlit-app:latest   
 
-# created an april branch
-# second change in april branch
+# OAuth
+For OAuth flow, run oAuthMain.py file
+
 
  # AWS
 
