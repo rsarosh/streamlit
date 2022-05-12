@@ -1,10 +1,11 @@
+import datetime
 from dotenv import load_dotenv
 import os
 from azure.core.credentials import AzureKeyCredential
 from azure.eventgrid import EventGridPublisherClient, EventGridEvent
 
 event = EventGridEvent(
-    data={"team": "Analyst"},
+    data={"team": "Analyst", "timestamp": datetime.datetime.now().isoformat()},
     subject="Start Scrapping",
     event_type="Scrapping",
     data_version="1.0"
