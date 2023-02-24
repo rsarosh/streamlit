@@ -2,7 +2,7 @@
 import mysql.connector
 from configparser import ConfigParser
 from torch import _fake_quantize_per_tensor_affine_cachemask_tensor_qparams
-CNX: mysql.connector.connect
+CNX: mysql.connector.connect = None
 
 
 def login(userName: str, password: str) -> bool:
@@ -24,6 +24,8 @@ def execute_sql_query(query, args):
         _password = config.get('MySQL', 'password')
         CNX = mysql.connector.connect(host=_host, database=_database,
                                       user=_user, passwd=_password, port=_port)
-
+    
+    CNX.commit()
+    
     with CNX.cursor() as cur:
         return cur.callproc(query, args)
